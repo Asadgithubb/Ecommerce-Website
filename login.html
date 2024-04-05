@@ -31,7 +31,30 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <!-- Navbar Links -->
+                <ul class="navbar-nav m-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="./index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./index.html#top-sale">Top sale</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./index.html#special-price">Special Price</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./index.html#new-phones">New Phones</a>
+                    </li>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./cart.html">Cart</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Coming Soon</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">Login</a>
+                    </li>
+                </ul>
             </div>
         </nav>
         <!-- !Primary Navigation -->
@@ -86,17 +109,23 @@
     </script>
     <!-- Custom Javascript -->
     <script src="script.js"></script>
-    <!-- Form Validator Script -->
-    <script src="https://ltp.crfnetwork.com/form-validate/js/validator2.js"></script>
-    <script>
-        // Initialize the form validator
-        var signInForm = new Validator('#sign-in');
-        // Define onSubmit function
-        signInForm.onSubmit = function (data) {
-            // On form submission, display form data as an alert
-            alert(JSON.stringify(data));
-        }
-    </script>
+<!-- Form Validator Script -->
+<script src="https://ltp.crfnetwork.com/form-validate/js/validator2.js"></script>
+<script>
+    // Initialize the form validator
+    var signInForm = new Validator('#sign-in');
+    // Define onSubmit function
+    signInForm.onSubmit = function (data, event) {
+        // Prevent default form submission
+        event.preventDefault();
+        // Display alert message
+        alert("Thank you for logging in. You can now enjoy our services!");
+        // Redirect to index.html after 2 seconds
+        setTimeout(function() {
+            window.location.href = './index.html';
+        }, 2000);
+    }
+</script>
 </body>
 
 </html>
